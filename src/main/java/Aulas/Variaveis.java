@@ -1,3 +1,5 @@
+package Aulas;
+
 public class Variaveis {
     public static void main(String[] args) {
         System.out.println("Hello, world!"); // equivale ao console.log

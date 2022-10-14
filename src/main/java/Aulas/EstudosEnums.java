@@ -1,3 +1,5 @@
+package Aulas;
+
 public class EstudosEnums {
     public static void main(String[] args) {
         // Enums são estrutura com constantes definidas
