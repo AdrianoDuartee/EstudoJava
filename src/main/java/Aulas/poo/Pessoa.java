@@ -1,5 +1,7 @@
 package Aulas.poo;
 
+import java.util.ArrayList;
+
 public class Pessoa {
     /// Propriedades/atributos de uma Pessoa
     String nome;
@@ -7,6 +9,8 @@ public class Pessoa {
     int idade;
     double altura;
     double peso;
+
+    ArrayList<Pessoa>conhecidos = new ArrayList<>();
 
     Pessoa () { // construtor da classe
         //this -> representa o objeto
@@ -52,5 +56,25 @@ public class Pessoa {
     }
     void comer(String comida) {
         System.out.println("Estou comendo " + comida);
+    }
+
+    void cumprimentar(Pessoa pessoa) {
+        this.dizOla();
+        pessoa.dizOla();
+
+        if (!this.conhecePessoa(pessoa)) {
+            this.addPessoaNova(pessoa);
+            pessoa.conhecePessoa(this);
+        }
+    }
+    void addPessoaNova(Pessoa pessoa) { // faz o objeto "conhecer"
+        System.out.println(this.nome + " conheceu " + "!!!");
+        this.conhecidos.add(pessoa);
+
+    }
+    boolean conhecePessoa(Pessoa pessoa) {
+        // se true, a pessoa (this) conhece a outra pessoa
+        // se false, não conhece
+        return this.conhecidos.contains(pessoa);
     }
 }

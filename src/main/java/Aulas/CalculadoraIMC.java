@@ -79,4 +79,3 @@ public class CalculadoraIMC {
         System.out.println(i);
         }
     }
-}
